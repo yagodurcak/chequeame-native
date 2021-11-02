@@ -1,31 +1,34 @@
-import { ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ImageBackground, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from "react-native";
+import React, {useState} from 'react';
 
-import React from 'react';
+const Home = ({navigation}) => {
 
-const Home = () => {
-    return (
-       
+    const [nombre, setNombre] = useState('');
+
+    
+    return (      
 
 <View style={styles.container}>
-      <ImageBackground source={require('./assets/FONDO.jpg')} resizeMode="cover" style={styles.image}>
+      <ImageBackground source={require('../assets/FONDO.jpg')} resizeMode="cover" style={styles.image}>
         <View style={styles.formContainer}>
           <Text style={styles.title}>Ingrese su Email</Text>
-          <TextInput placeholder="ejemplo@gmail.com" style={styles.input} />
+          <TextInput placeholder="ejemplo@gmail.com" style={styles.input} onChangeText={ (value)=> setNombre(value)} value={nombre}/>
           <Text style={styles.title}>Ingrese su Contraseña</Text>
           <TextInput placeholder="*******" style={styles.input} />
 
           <TouchableOpacity
             style={styles.boton}
           >
-            <Text style={styles.textoboton}>INICIAR SESIÓN</Text>
+            <Text style={styles.textoboton} onPress={()=> navigation.navigate(`Cuit`)}>INICIAR SESIÓN</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.boton1}
           >
-            <Text style={styles.textoboton}>REGISTRARSEs</Text>
+            <Text style={styles.textoboton}>REGISTRARSE</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
+      
     </View>
     )
 };
