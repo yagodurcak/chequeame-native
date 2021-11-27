@@ -13,7 +13,7 @@ const Cuit = () => {
                     <TouchableOpacity
             style={styles.boton}
           >
-            <Text style={styles.textoboton}>VER INFORME</Text>
+            <Text style={styles.textoboton}>VER INFORMEs</Text>
           </TouchableOpacity>
 
         </View>

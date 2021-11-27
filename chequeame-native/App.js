@@ -10,12 +10,11 @@ const App = () => (
 
   <NavigationContainer>
 
-    <Stack.Navigator     screenOptions={{
-      headerShown: false,
-    }}
+    <Stack.Navigator  initialRouteName= "Home"
+    screenOptions={{headerStyle:{backgroundColor:'#366182' }, headerTintColor:'white'}}
    >
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Cuit" component={Cuit} />
+      <Stack.Screen name="Cuit" component={Cuit} options={{title:'Bienvenido a Chequeame'}}/>
     </Stack.Navigator>
       
   </NavigationContainer>
